@@ -58,6 +58,34 @@ namespace Practica_3_HashTable
             hashtable.Add(alumno.codigo, alumno.nombre);
         }
 
+        public void eliminarAlumno()
+        {
+            if (hashtable.Count == 0)
+            {
+                Console.WriteLine("La tabla esta vacia");
+                return;
+            }
+            Console.Write("Dame el codigo: ");
+            string codigoEliminar = Console.ReadLine();
+            char respuesta;
+            if (hashtable.ContainsKey(codigoEliminar))
+            {
+                Console.WriteLine("\nCodigo: " + codigoEliminar);
+                Console.WriteLine("Nombre: " + hashtable[codigoEliminar].ToString());
+                Console.Write("\nDesea eliminar s/n? ");
+                respuesta = char.Parse(Console.ReadLine());
+                if (respuesta == 's' || respuesta == 'S')
+                {
+                    hashtable.Remove(codigoEliminar);
+                    Console.WriteLine("\nRegistro eliminado");
+                }
+                else
+                    Console.WriteLine("\nRegistro intacto");
+            }
+            else
+                Console.WriteLine("No existe el codigo");
+        }
+
         static void Main(string[] args)
         {
         }
