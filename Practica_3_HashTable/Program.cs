@@ -49,6 +49,15 @@ namespace Practica_3_HashTable
 
         }
 
+        public void agregarAlumno()
+        {
+            Console.Write("\nDame el codigo: ");
+            alumno.setCodigo(Console.ReadLine());
+            Console.Write("Dame el nombre: ");
+            alumno.setNombre(Console.ReadLine());
+            hashtable.Add(alumno.codigo, alumno.nombre);
+        }
+
         static void Main(string[] args)
         {
         }
