@@ -86,6 +86,19 @@ namespace Practica_3_HashTable
                 Console.WriteLine("No existe el codigo");
         }
 
+        public void mostrarAlumno()
+        {
+            if (hashtable.Count == 0)
+            {
+                Console.WriteLine("La tabla esta vacia");
+                return;
+            }
+            foreach (DictionaryEntry de in hashtable)
+            {
+                Console.WriteLine("\nCodigo: " + de.Key + "\nNombre: " + de.Value.ToString());
+            }
+        }
+
         static void Main(string[] args)
         {
         }
