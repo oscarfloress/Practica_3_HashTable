@@ -101,6 +101,17 @@ namespace Practica_3_HashTable
 
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Title = "HashTable";
+            Console.SetWindowSize(50, 30);
+            ClasePrincipal principal = new ClasePrincipal();
+            do
+            {
+                Console.Clear();
+                principal.menu();
+                Console.ReadKey();
+            } while (!principal.salir);
         }
     }
 }
