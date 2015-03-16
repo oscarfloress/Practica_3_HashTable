@@ -16,6 +16,39 @@ namespace Practica_3_HashTable
             alumno = new Alumno();
         }
 
+        public void menu()
+        {
+            int opcion;
+            Console.WriteLine("1.- Agregar alumno");
+            Console.WriteLine("2.- Eliminar alumno");
+            Console.WriteLine("3.- Ver alumnos");
+            Console.WriteLine("4.- Salir");
+            Console.Write("\nElegir la opcion: ");
+            try
+            {
+                opcion = int.Parse(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1: agregarAlumno();
+                        break;
+                    case 2: eliminarAlumno();
+                        break;
+                    case 3: mostrarAlumno();
+                        break;
+                    case 4: Console.WriteLine("Bye");
+                        salir = true;
+                        break;
+                    default: Console.WriteLine("Opcion invalida");
+                        break;
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Debe ingresar un entero");
+            }
+
+        }
+
         static void Main(string[] args)
         {
         }
